@@ -6,7 +6,10 @@ function processData(input) {
 
     // Create a variable named splitInput
     // Split the input variable on the '\n' character
-    var splitInput = input.split("\n")
+    var splitInput = input.split("\n"),
+        numberOfIntegers = splitInput.splice(0,1),
+        integers = splitInput[0].split(" "),
+        summary = {};
 
     // Log the result of the splutInput variable
     // console.log(splitInput)
@@ -14,7 +17,6 @@ function processData(input) {
     // Create a variable named numberOfIntegers
     // Assign numberOfIntegers to be the first index of the splitInput variable
     // Remove the first index of the splitInput variable
-    var numberOfIntegers = splitInput.splice(0,1)
 
     // Log the result of the numberOfIntegers variable
     // console.log(numberOfIntegers)
@@ -25,34 +27,32 @@ function processData(input) {
     // Create a variable named integers
     // Split the first index of the integers variable on the ' ' character
     // Assign that result to the integers variable
-    var integers = splitInput[0].split(" ")
 
     // Log the result of the integers variable
     // console.log(integers)
 
     // Create an object named summary to store the number of times an integer occurs
-    var summary = {}
 
     // Iterate through the integers array
     for (var i = 0; i < integers.length; i++) {
         if (summary[integers[i]]) {
             // If the integer property already exists on the summary object, increment it by 1
-            summary[integers[i]] += 1
+            summary[integers[i]] += 1;
         } else {
             // If the integer property does not exist on the summary object, set it equal to 1
-            summary[integers[i]] = 1
+            summary[integers[i]] = 1;
         }
     }
 
     // Log the summary object
-    console.log(summary)
+    console.log(summary);
 
     // Iterate through the summary object
     for (var property in summary) {
         if (summary[property] == 1) {
             // If a property of the summary object equals 1, log that property
             // console.log(property)
-            process.stdout.write(property)
+            process.stdout.write(property);
         }
     }
 }
