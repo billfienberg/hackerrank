@@ -5,67 +5,67 @@ function processData(input) {
 
     // Create a variable named splitInput
     // Split the input variable on the '\n' character
-    var splitInput = input.split("\n")
+    var splitInput = input.split("\n");
 
     // Log the result of the splitInput variable
-    // console.log(splitInput)
+    // console.log(splitInput);
 
     // Iterate through the splitInput array
     for (var i = 0; i < splitInput.length; i++) {
 
         // Set the current index of the splitInput array eqaul to the result of splitting itself on the " " character
-        splitInput[i] = splitInput[i].split(" ")
+        splitInput[i] = splitInput[i].split(" ");
 
         // Log the current index of the splitInput array
-        // console.log(splitInput[i])
+        // console.log(splitInput[i]);
     }
 
     // Create a function named checkMaxWidth that accepts an array, an entry index and an exit index as a paramter
     var checkMaxWidth = function(array, entryIndex, exitIndex) {
 
         // Create a variable named lowestWidth, and upon creation set it equal to the value of the entry index in the array
-        var lowestWidth = array[entryIndex]
+        var lowestWidth = array[entryIndex];
 
         // Log the value of the lowestWidth variable
-        // console.log("lowestWidth: " + lowestWidth)
+        // console.log("lowestWidth: " + lowestWidth);
 
         // Iterate through the array paramter starting from the entry index and ending after the exit index
         for (var j = entryIndex; j <= exitIndex; j++) {
             if (array[j] < lowestWidth) {
                 // If the current value of the index of the array parameter is less than the current value of the lowestWidth variable, then set the lowestWidth variable equal to the current value of the index of the array parameter
-                lowestWidth = array[j]
+                lowestWidth = array[j];
             }
         }
 
         // Return the lowestWidth variable
-        return lowestWidth
+        return lowestWidth;
     }
 
     // Iterate through each test case
     for (var k = 2; k < splitInput[1].length + 2; k++) {
 
         // Create a variable named entryIndex that is equal to the integer that is returned from parsing the first index of the current test case
-        var entryIndex = parseInt(splitInput[k][0])
+        var entryIndex = parseInt(splitInput[k][0]),
+            exitIndex = parseInt(splitInput[k][1]),
+            width = checkMaxWidth(splitInput[1],entryIndex,exitIndex);
 
         // Create a variable named entryIndex that is equal to the integer that is returned from parsing the second index of the current test case
-        var exitIndex = parseInt(splitInput[k][1])
 
         // Call the checkMaxWidth function
         // Use the first index of the splitInput array as the array parameter for the checkMaxWidth function
         // Use the entryIndex variable as the entryIndex parameter for the checkMaxWidth function
         // Use the exitIndex variable as the exitIndex parameter for the checkMaxWidth function
         // Create a variabe named width, and set it equal to the result of calling the checkMaxWidth function
-        var width = checkMaxWidth(splitInput[1],entryIndex,exitIndex)
 
         if (width == 1) {
             // If the value of the width variable is 1, then log the number 1
-            console.log(1)
+            console.log(1);
         } else if (width == 2) {
             // If the value of the width variable is 2, then log the number 2
-            console.log(2)
+            console.log(2);
         } else if (width == 3) {
             // If the value of the width variable is 3, then log the number 3
-            console.log(3)
+            console.log(3);
         }
     }
 }
