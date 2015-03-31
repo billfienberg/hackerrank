@@ -1,9 +1,24 @@
 var input = "4\nabc\nabcba\nabcd\ncba"
+console.log(input)
 
 var splitInput = input.split("\n")
 console.log(splitInput)
 
-for (var i = 0; i < splitInput.length; i++) {
-    splitInput[i] = splitInput[i].split(" ")
-    console.log(splitInput[i])
+var numberOfTestCases = splitInput.splice(0,1)
+console.log(numberOfTestCases)
+
+var reduceLetterByOne = function reduceLetterByOne (letter) {
+  var letter = letter.toLowerCase();
+  console.log(letter)
+  var valueOfLetter = letter.charCodeAt(0) - 97
+  console.log(valueOfLetter)
+  if (valueOfLetter > 0) {
+    console.log("valueOfLetter: " + valueOfLetter)
+    valueOfLetter -= 1;
+    letter = String.fromCharCode(valueOfLetter - 1)
+    console.log("String.fromCharCode(97): " + String.fromCharCode(97))
+    console.log("letter: " + letter)
+    console.log("valueOfLetter: " + valueOfLetter)
+  }
 }
+reduceLetterByOne("k")

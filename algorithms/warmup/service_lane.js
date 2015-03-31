@@ -21,7 +21,7 @@ function processData(input) {
     }
 
     // Create a function named checkMaxWidth that accepts an array, an entry index and an exit index as a paramter
-    var checkMaxWidth = function(array, entryIndex, exitIndex) {
+    var checkMaxWidth = function checkMaxWidth (array, entryIndex, exitIndex) {
 
         // Create a variable named lowestWidth, and upon creation set it equal to the value of the entry index in the array
         var lowestWidth = array[entryIndex];
