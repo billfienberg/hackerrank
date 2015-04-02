@@ -11,11 +11,12 @@ var reduceLetterByOne = function reduceLetterByOne (letter) {
   var letter = letter.toLowerCase();
   console.log(letter)
   var valueOfLetter = letter.charCodeAt(0) - 97
-  console.log(valueOfLetter)
+  console.log("valueOfLetter: " + valueOfLetter)
   if (valueOfLetter > 0) {
     console.log("valueOfLetter: " + valueOfLetter)
     valueOfLetter -= 1;
-    letter = String.fromCharCode(valueOfLetter - 1)
+    console.log("valueOfLetter: " + valueOfLetter)
+    letter = String.fromCharCode(valueOfLetter + 97)
     console.log("String.fromCharCode(97): " + String.fromCharCode(97))
     console.log("letter: " + letter)
     console.log("valueOfLetter: " + valueOfLetter)
