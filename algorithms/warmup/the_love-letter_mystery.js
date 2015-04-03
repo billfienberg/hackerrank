@@ -21,5 +21,10 @@ var reduceLetterByOne = function reduceLetterByOne (letter) {
     console.log("letter: " + letter)
     console.log("valueOfLetter: " + valueOfLetter)
   }
+  return letter;
 }
 reduceLetterByOne("k")
+
+var processEachWord = function processEachWord (word) {
+  console.log(word)
+}
