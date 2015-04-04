@@ -25,6 +25,7 @@ var reduceLetterByOne = function reduceLetterByOne (letter) {
 }
 reduceLetterByOne("k")
 
-var processEachWord = function processEachWord (word) {
+var processOneWord = function processEachWord (word) {
   console.log(word)
+
 }
