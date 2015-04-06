@@ -7,66 +7,69 @@ console.log(splitInput)
 var numberOfTestCases = splitInput.splice(0,1)
 console.log(numberOfTestCases)
 
-var reduceLetterByOne = function reduceLetterByOne (letter) {
-  console.log("This is coming from the reduceLetterByOne function")
-  var letter = letter.toLowerCase();
-  // console.log(letter)
-  var valueOfLetter = letter.charCodeAt(0) - 97
-  // console.log("valueOfLetter: " + valueOfLetter)
-  if (valueOfLetter > 0) {
-    // console.log("valueOfLetter: " + valueOfLetter)
-    valueOfLetter -= 1;
-    // console.log("valueOfLetter: " + valueOfLetter)
-    letter = String.fromCharCode(valueOfLetter + 97)
-    // console.log("String.fromCharCode(97): " + String.fromCharCode(97))
-    // console.log("letter: " + letter)
-    // console.log("valueOfLetter: " + valueOfLetter)
-  }
-  return letter;
-}
-// reduceLetterByOne("k")
+// Tools
+// String.fromCharCode()
+// "abc".charCodeAt
 
+var app = function app (array) {
 
-var processOneWord = function processOneWord (word) {
-  var term = word.trim().split("")
-  console.log(term)
-  var pointer2 = word.length - 1
-  for (var i = 0; i < term.length; i++) {
-    var pointer1 = i;
-    // console.log(term)
-    if (pointer1 < pointer2) {
-      console.log("pointer1: " + pointer1)
-      console.log("pointer2: " + pointer2)
-      console.log("term[pointer1]: " + term[pointer1] + "; term[pointer2]: " + term[pointer2])
-      if (term[pointer1] == term[pointer2]) {
-        console.log("term[pointer1] and term[pointer2] are equal.")
-      } else if (term[pointer1] != term[pointer2]) {
-        console.log("term[pointer1] and term[pointer2] are not equal.")
-        console.log(term[pointer2])
-        term[pointer2] = reduceLetterByOne(term[pointer2])
-        console.log(term[pointer2])
-        console.log(term)
-        term = term.join("")
-        processOneWord(term)
-      }
-      // var valueOfIndex = term[i].toLowerCase().charCodeAt(0) - 97;
-      // console.log(valueOfIndex)
-      // if (valueOfIndex > 0 && valueOfIndex < 26) {
-      //   console.log("The valueOfIndex is greater than 0 and less than 26.")
-      //   console.log(term[i])
-      //   term[i] = reduceLetterByOne(term[i])
-      //   console.log(term[i])
-      //   stuff = term.join("")
-      //   console.log(stuff)
-      // }
+  var analyze = function analyze (word) {
+
+    var word = word.split("")
+
+    var updateIndex = function updateIndex (array, index, value) {
+      array[index] = value;
+      return array[index]
     }
-    pointer2 -= 1;
+
+    var reduceLetter = function reduceLetter (letter) {
+      var valueOfLetter = letter.charCodeAt(0);
+      var newLetter = String.fromCharCode(valueOfLetter - 1)
+      return newLetter
+    }
+    // reduceLetter("b")
+
+    var compare = function compare (word, first, second) {
+      if (word[first] == word[second]) {
+        console.log("first equals second")
+      } else if (word[first] > word[second]) {
+        console.log("first is greater than second.")
+        console.log(word)
+        updateIndex(word, first, reduceLetter(first))
+        console.log(word)
+      } else if (word[second] > [first]) {
+        console.log("second is greater than first.")
+        console.log(word)
+        updateIndex(word, second, reduceLetter(second))
+        console.log(word)
+      } else {
+        console.log("Something weird happened.")
+      }
+    }
+    // compare(2,1)
+    // compare(1,2)
+    // compare(1,1)
+
+    var pointer = word.length - 1;
+    for (var i = 0; i < word.length; i++) {
+      if (i >= pointer) {
+        break;
+        console.log(console.log("i is greater or equal to pointer."))
+      }
+
+      compare(word[i], word[pointer])
+      pointer -= 1;
+    }
+    console.log(word)
+    word = word.join("")
+    console.log(word)
+
   }
-  console.log("---------------------------------------------")
-  console.log(term)
-  return term
-  console.log("term is below this.")
-  console.log("term is above this.")
+  analyze("abc")
+
+
+  for (var z = 0; z < array.length; z++) {
+    console.log(array[z])
+  }
 }
-var stuff = "abc"
-processOneWord(stuff)
+app(splitInput)
