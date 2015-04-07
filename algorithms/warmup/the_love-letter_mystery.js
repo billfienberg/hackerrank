@@ -42,7 +42,7 @@ function processData(input) {
             // palindrome("racecar")
 
             if (palindrome(word)) {
-              return "Hell yea bitches!"
+              return
             }
 
             var word = word.split("")
