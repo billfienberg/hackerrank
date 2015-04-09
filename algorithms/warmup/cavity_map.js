@@ -15,7 +15,7 @@ var numberOfCells = splitInput.splice(0,1)
 // console.log("numberOfCells: " + numberOfCells)
 
 var numberOfRows = Math.sqrt(numberOfCells)
-console.log("numberOfRows: " + numberOfRows)
+// console.log("numberOfRows: " + numberOfRows)
 
 // console.log("splitInput: " + splitInput)
 console.log(" splitInput[1].length: " + splitInput[1].length)
@@ -46,20 +46,21 @@ var checkForCavity = function checkForCavity (string) {
     }
     string = string.join('')
     // console.log("string: " + string)
-    console.log("3: " + string)
 }
 
-for (var i = 0; i < splitInput.length; i++) {
-    console.log('/////////////////////////////////////////////////////////////////')
-    console.log("1: " + splitInput[i])
-    console.log(splitInput.length)
-    console.log("2: " + splitOutput[i])
-    checkForCavity(splitInput[i].toString())
-}
+// for (var i = 0; i < splitInput.length; i++) {
+//     console.log('/////////////////////////////////////////////////////////////////')
+//     console.log("1: " + splitInput[i])
+//     console.log(splitInput.length)
+//     console.log("2: " + splitOutput[i])
+//     checkForCavity(splitInput[i].toString())
+// }
+
+var outputArray;
 
 var printSquareMap = function printSquareMap (string) {
     var square = string.toString()
-    // console.log(square)
+    console.log(square)
     var numberOfCells = square.length
     // console.log(numberOfCells)
     var numberOfRows = Math.sqrt(numberOfCells)
@@ -77,7 +78,47 @@ var printSquareMap = function printSquareMap (string) {
             output += square[i]
         }
         // console.log("output: " + output)
+        console.log("i: " + i)
+        console.log("string[i]: " + square[i])
     }
-    console.log(output)
+    // console.log(output)
+    outputArray = output.split('\n')
+    console.log(outputArray)
 }
-printSquareMap("123456789")
+printSquareMap(123456789)
+// printSquareMap(splitInput[0])
+
+var checkIfBorder = function checkIfBorder (array) {
+    var last = array.length - 1
+    console.log(array)
+    for (var i = 0; i < array.length; i++) {
+        console.log(array[i])
+        if (array[0]) {
+            console.log("Every cell in this array is on the top border.")
+        } else if (array[last]) {
+            console.log("Every cell in this array is on the bottom border.")
+        } else if (array[i][0]) {
+
+        } else if (array[i][last]) {
+
+        }
+    }
+}
+
+// checkIfBorder(outputArray)
+
+// var someArray = []
+// someArray[0] = {}
+// someArray[0].border = true
+// someArray[0].index = 0
+// someArray[0].value = 10
+// console.log(someArray[0])
+
+var something = "01234567891011121314151617181920"
+// console.log(something)
+var string = ""
+for (var i = 0; i < something.length; i++) {
+    string += i
+}
+console.log(something)
+console.log(string)
