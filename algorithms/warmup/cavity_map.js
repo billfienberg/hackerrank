@@ -115,10 +115,18 @@ var checkIfBorder = function checkIfBorder (array) {
 // console.log(someArray[0])
 
 var something = "01234567891011121314151617181920"
+something = something.split("")
 // console.log(something)
 var string = ""
 for (var i = 0; i < something.length; i++) {
-    string += i
+    // console.log("something[i]: " + something[i])
+    if (i === 0) {
+        console.log("It's a border.")
+    }
+    console.log(i)
+    var things = i.toString()
+    console.log(things[things.length - 1])
+    // string += i
 }
 console.log(something)
 console.log(string)
