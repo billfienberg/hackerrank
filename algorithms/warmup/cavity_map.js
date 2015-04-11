@@ -107,26 +107,47 @@ var checkIfBorder = function checkIfBorder (array) {
 
 // checkIfBorder(outputArray)
 
-// var someArray = []
-// someArray[0] = {}
-// someArray[0].border = true
-// someArray[0].index = 0
-// someArray[0].value = 10
-// console.log(someArray[0])
+var someArray = []
 
-var something = "01234567891011121314151617181920"
+var something = "2587673293641591333444922684212827282684185934985966568161623775844765869818231839655315139935283917"
 something = something.split("")
 // console.log(something)
 var string = ""
 for (var i = 0; i < something.length; i++) {
+    // console.log(i)
+    var lastDigitOfIndex = i.toString()[i.toString().length - 1]
+    // console.log(lastDigitOfIndex)
     // console.log("something[i]: " + something[i])
-    if (i === 0) {
-        console.log("It's a border.")
+    if (lastDigitOfIndex == 0 || lastDigitOfIndex == 9) {
+        // console.log("lastDigitOfIndex = 0 or 9")
+        someArray.push({
+            "index": i,
+            "value": something[i],
+            "isOnBorder": true
+        });
+    } else if (lastDigitOfIndex > 0 || lastDigitOfIndex < 9) {
+        // console.log("lastDigitOfIndex > 0 or < 9")
+        someArray.push({
+            "index": i,
+            "value": something[i],
+            "isOnBorder": false
+        })
     }
-    console.log(i)
-    var things = i.toString()
-    console.log(things[things.length - 1])
     // string += i
 }
-console.log(something)
-console.log(string)
+// console.log(someArray)
+for (var j = 1; j < someArray.length - 1; j++) {
+    // console.log(someArray[j])
+    var valueOfIndexMinus1 = someArray[j - 1].value
+    var valueOfIndex = someArray[j].value
+    var valueOfIndexPlus1 = someArray[j + 1].value
+    console.log(valueOfIndexMinus1 + " " + someArray[j].value + " " + valueOfIndexPlus1)
+    // console.log(someArray[j].value)
+    // console.log(someArray[j + 1].value)
+    if (valueOfIndex > valueOfIndexMinus1 && valueOfIndex > valueOfIndexPlus1) {
+        valueOfIndex = "X"
+    }
+}
+console.log(someArray)
+// console.log(something)
+// console.log(string)
