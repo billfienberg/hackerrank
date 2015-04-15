@@ -38,5 +38,7 @@ var calculateNumberOfPieces = function calculateNumberOfPieces (numberOfCuts) {
 }
 
 for (var i = 0; i < splitInput.length; i++) {
-    console.log(calculateNumberOfPieces((splitInput[i]-2)))
+    console.log(splitInput[i])
+    console.log(splitInput[i] - 2)
+    // console.log(calculateNumberOfPieces((splitInput[i]-2)))
 }
