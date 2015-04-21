@@ -14,7 +14,7 @@ function processData(input) {
     // console.log(splitInput)
 
     var sizeOfArray = splitInput.splice(0,1)[0]
-    // console.log(sizeOfArray)
+    // console.log(sizeOfArray);
     // console.log(splitInput)
 
     var arrayOfIntegers = splitInput[0].split(" ")
