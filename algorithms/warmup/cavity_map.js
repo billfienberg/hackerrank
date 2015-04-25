@@ -1,10 +1,10 @@
 function processData(input) {
     //Enter your code here
-    var splitInput = input.split('\n')
+    var splitInput = input.split('\n');
 
-    var n = parseInt(splitInput.splice(0,1)[0],10)
+    var n = parseInt(splitInput.splice(0,1)[0],10);
 
-    var outputString = splitInput.join('')
+    var outputString = splitInput.join('');
 
     var setCharAt = function setCharAt (str, index, chr) {
         if (index > str.length - 1) return str;
@@ -22,21 +22,21 @@ function processData(input) {
                 iPlus1 = i + 1;
                 iPlusN = i + n;
                 if (outputString[i] > outputString[iMinusN] && outputString[i] > outputString[iMinus1] && outputString[i] > outputString[iPlus1] && outputString[i] > outputString[iPlusN]) {
-                    arrayOfCavityIndices.push(i)
+                    arrayOfCavityIndices.push(i);
                 }
             }
         }
     }
 
     for (var k = 0; k < arrayOfCavityIndices.length; k++) {
-        outputString = setCharAt(outputString, arrayOfCavityIndices[k], 'X')
+        outputString = setCharAt(outputString, arrayOfCavityIndices[k], 'X');
     }
 
     //                      foo.match(new RegExp('.{1,'+n+'}', 'g'));
-    outputString = outputString.match(new RegExp('.{1,'+n+'}', 'g'))
+    outputString = outputString.match(new RegExp('.{1,'+n+'}', 'g'));
 
-    outputString = outputString.join('\n')
-    console.log(outputString)
+    outputString = outputString.join('\n');
+    console.log(outputString);
 
 }
 
